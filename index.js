@@ -11,5 +11,7 @@ app.use(json)
 app.use('/api', apiRouter)
 
 app.use((req, res, next) =>
-  res.status(404).send('Invalid URL, please send API requests to /api/recipes')
+  res
+    .status(404)
+    .send('Invalid URL, please send check the list of endpoints to the API')
 )
