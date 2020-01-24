@@ -9,3 +9,7 @@ app.listen(PORT || 5000, () => {
 
 app.use(json)
 app.use('/api', apiRouter)
+
+app.use((req, res, next) =>
+  res.status(404).send('Invalid URL, please send API requests to /api/recipes')
+)
